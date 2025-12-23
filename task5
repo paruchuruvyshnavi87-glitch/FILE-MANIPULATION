@@ -1,0 +1,15 @@
+def word_count(filename):
+    with open(filename, "r") as file:
+        text = file.read().lower()
+
+    words = text.split()
+    counts = {}
+
+    for word in words:
+        counts[word] = counts.get(word, 0) + 1
+
+    for word in sorted(counts):
+        print(f"{word}: {counts[word]}")
+
+file_name = input("Enter filename: ")
+word_count(file_name)
